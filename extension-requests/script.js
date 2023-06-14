@@ -21,7 +21,18 @@ const state = {
 const render = async () => {
   try {
     addLoader(container);
-    const extensionRequests = await getExtensionRequests();
+    // const extensionRequests = await getExtensionRequests();
+    const extensionRequests = {allExtensionRequests: [,]};
+    const a = 10;
+    const approved = {title: "unable to do this", taskId :1,status:'APPROVED'};
+    const notapproved = {taskId :2,status:'NOT_APPROVED'};
+    for(var i = 0; i < a; i++){
+      if(i % 2 == 0)
+      extensionRequests.allExtensionRequests.push(approved);
+      else
+      extensionRequests.allExtensionRequests.push(notapproved);
+
+    }
     const allExtensionRequests = extensionRequests.allExtensionRequests;
     allExtensionRequests.forEach((data) => {
       extensionRequestsContainer.appendChild(
